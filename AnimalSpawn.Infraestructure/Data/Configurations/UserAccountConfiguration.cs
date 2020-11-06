@@ -1,10 +1,14 @@
 ﻿using AnimalSpawn.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace AnimalSpawn.Infraestructure.Data.Configurations
 {
-    public class UserAccountConfiguration : IEntityTypeConfiguration<UserAccount>
+    class UserAccountConfiguration : IEntityTypeConfiguration<UserAccount>
     {
         public void Configure(EntityTypeBuilder<UserAccount> builder)
         {
@@ -25,6 +29,11 @@ namespace AnimalSpawn.Infraestructure.Data.Configurations
                 .HasForeignKey<UserAccount>(d => d.Id)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_UserAccount_0");
+
+            builder.Ignore(d => d.CreateAt);
+            builder.Ignore(d => d.CreatedBy);
+            builder.Ignore(d => d.UpdateAt);
+            builder.Ignore(d => d.Status);
         }
     }
 }

@@ -1,10 +1,14 @@
 ﻿using AnimalSpawn.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace AnimalSpawn.Infraestructure.Data.Configurations
 {
-    public class SightingConfiguration : IEntityTypeConfiguration<Sighting>
+    class SightingConfiguration : IEntityTypeConfiguration<Sighting>
     {
         public void Configure(EntityTypeBuilder<Sighting> builder)
         {

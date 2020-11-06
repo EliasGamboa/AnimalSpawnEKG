@@ -1,16 +1,19 @@
 ﻿using AnimalSpawn.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace AnimalSpawn.Infraestructure.Data.Configurations
 {
-    public class CountryConfiguration : IEntityTypeConfiguration<Country>
+    class CountryConfiguration : IEntityTypeConfiguration<Country>
     {
         public void Configure(EntityTypeBuilder<Country> builder)
         {
             builder.Property(e => e.Code)
-                   .HasMaxLength(25)
-                   .IsUnicode(false);
+                    .HasMaxLength(25)
+                    .IsUnicode(false);
 
             builder.Property(e => e.CreateAt).HasColumnType("datetime");
 
@@ -29,4 +32,3 @@ namespace AnimalSpawn.Infraestructure.Data.Configurations
         }
     }
 }
- 

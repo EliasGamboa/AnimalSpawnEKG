@@ -45,7 +45,6 @@ namespace AnimalSpawn.Infraestructure.Data.Configurations
                 .HasForeignKey(d => d.SpeciesId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Animal_0");
-           
         }
     }
 }

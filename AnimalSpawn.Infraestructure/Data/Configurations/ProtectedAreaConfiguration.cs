@@ -1,10 +1,14 @@
 ﻿using AnimalSpawn.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace AnimalSpawn.Infraestructure.Data.Configurations
 {
-    public class ProtectedAreaConfiguration : IEntityTypeConfiguration<ProtectedArea>
+    class ProtectedAreaConfiguration : IEntityTypeConfiguration<ProtectedArea>
     {
         public void Configure(EntityTypeBuilder<ProtectedArea> builder)
         {

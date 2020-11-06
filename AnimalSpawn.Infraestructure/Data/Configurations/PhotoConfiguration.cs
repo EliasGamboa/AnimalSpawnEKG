@@ -1,10 +1,13 @@
 ﻿using AnimalSpawn.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace AnimalSpawn.Infraestructure.Data.Configurations
 {
-    public class PhotoConfiguration : IEntityTypeConfiguration<Photo>
+    class PhotoConfiguration : IEntityTypeConfiguration<Photo>
     {
         public void Configure(EntityTypeBuilder<Photo> builder)
         {

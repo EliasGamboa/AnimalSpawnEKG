@@ -1,10 +1,14 @@
 ﻿using AnimalSpawn.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace AnimalSpawn.Infraestructure.Data.Configurations
 {
-    public class RfidTagConfiguration : IEntityTypeConfiguration<RfidTag>
+    class RfidTagConfiguration : IEntityTypeConfiguration<RfidTag>
     {
         public void Configure(EntityTypeBuilder<RfidTag> builder)
         {
@@ -29,6 +33,12 @@ namespace AnimalSpawn.Infraestructure.Data.Configurations
                 .HasForeignKey(d => d.ProtectedAreaId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_RFIdTag_1");
+
+            builder.Ignore(d => d.CreateAt);
+            builder.Ignore(d => d.CreatedBy);
+            builder.Ignore(d => d.UpdateAt);
+            builder.Ignore(d => d.UpdatedBy);
+            builder.Ignore(d => d.Status);
         }
     }
 }

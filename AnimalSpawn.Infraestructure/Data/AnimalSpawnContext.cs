@@ -28,8 +28,7 @@ namespace AnimalSpawn.Infraestructure.Data
         public virtual DbSet<Sighting> Sighting { get; set; }
         public virtual DbSet<Species> Species { get; set; }
         public virtual DbSet<UserAccount> UserAccount { get; set; }
-
-       
+        
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -44,11 +43,6 @@ namespace AnimalSpawn.Infraestructure.Data
             modelBuilder.ApplyConfiguration<Sighting>(new SightingConfiguration());
             modelBuilder.ApplyConfiguration<Species>(new SpeciesConfiguration());
             modelBuilder.ApplyConfiguration<UserAccount>(new UserAccountConfiguration());
-
-
-
-        }
-
-
+        }        
     }
 }
